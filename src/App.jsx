@@ -7,14 +7,8 @@ import {
   useHelper,
 } from "@react-three/drei";
 import { DirectionalLightHelper } from "three";
-import { useControls } from "leva";
-
-const Cube = ({ position, size }) => {
+const Cube = ({ position, size, color }) => {
   const ref = useRef();
-
-  const { color } = useControls({
-    color: "white",
-  });
 
   /*   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -62,28 +56,17 @@ const Sphere = ({ position, size, color }) => {
 const Scene = () => {
   const directionalLightRef = useRef();
 
-  const { lightColor, lightIntensity } = useControls({
-    lightColor: "white",
-    lightIntensity: {
-      value: 0.5,
-      min: 0,
-      max: 5,
-      step: 0.1,
-    },
-  });
-
   useHelper(directionalLightRef, DirectionalLightHelper, 0.5, "white");
 
   return (
     <>
       <directionalLight
         position={[0, 1, 2]}
-        intensity={lightIntensity}
+        intensity={2}
         ref={directionalLightRef}
-        color={lightColor}
+        color={"white"}
       />
       <ambientLight intensity={0.1} />
-
       {/*       <group position={[0, -1, 0]}>
         <Cube position={[1, 0, 0]} color={"green"} size={[1, 1, 1]} />
         <Cube position={[-1, 0, 0]} color={"hotpink"} size={[1, 1, 1]} />
@@ -91,9 +74,9 @@ const Scene = () => {
         <Cube position={[-1, 2, 0]} color={"blue"} size={[1, 1, 1]} />
         <Cube position={[1, 2, 0]} color={"yellow"} size={[1, 1, 1]} />
       </group> */}
-      {/*       <Sphere position={[0, 0, 0]} args={[1, 20, 30]} color={"orange"} />*/}
-
-      <Cube position={[0, 0, 0]} color={"blue"} size={[1, 1, 1]} />
+      <Sphere position={[0, 0, 0]} args={[1, 20, 30]} color={"orange"} />
+      {/*       <Cube position={[0, 0, 0]} color={"blue"} size={[1, 1, 1]} />
+       */}{" "}
       <OrbitControls />
     </>
   );
