@@ -1,13 +1,12 @@
-import { Canvas } from "@react-three/fiber";
+//App.jsx
 import { Experience } from "./components/Experience";
 
 function App() {
- return (
-      <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
-       <color attach="background" args={["#ececec"]} />
-        <Experience />
-      </Canvas>
-    );
+  return (
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
+      <Experience />
+    </div>
+  );
 }
 
 export default App;
