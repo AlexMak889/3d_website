@@ -23,8 +23,8 @@ const LightWithHelper = () => {
   return (
     <pointLight 
       ref={pointLightRef} 
-      position={[0, 1.5, 0]} 
-      distance={2}
+      position={[0, 1, 0]} 
+      distance={4}
       intensity={3} 
       decay={1} 
       color={"#FFFF00"}
