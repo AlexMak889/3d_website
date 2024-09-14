@@ -7,7 +7,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Room(props) {
-  const { nodes, materials } = useGLTF('/test.glb')
+  const { nodes, materials } = useGLTF('public/models/test.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Plane.geometry} material={materials['vägg.002']} position={[0.057, 0, 0]} scale={[0.947, 1, 1]} />
@@ -83,4 +83,5 @@ export function Room(props) {
   )
 }
 
-useGLTF.preload('/test.glb')
+useGLTF.preload('public/models/test.glb')
+

@@ -1,6 +1,7 @@
+//Experience.jsx
 import React, { useRef, useEffect } from 'react';
 import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";  
 import { PointLight, PointLightHelper } from 'three';
 import { Room } from './Test';
 
@@ -22,10 +23,10 @@ const LightWithHelper = () => {
   return (
     <pointLight 
       ref={pointLightRef} 
-      position={[0, 0, 0]} 
-      distance={50}
-      intensity={10} 
-      decay={5} 
+      position={[0, 1.5, 0]} 
+      distance={2}
+      intensity={3} 
+      decay={1} 
       color={"#FFFF00"}
     />
   );
